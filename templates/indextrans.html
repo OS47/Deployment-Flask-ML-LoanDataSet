@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+	<h1>Predict Loan Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form  method="post" action="{{ url_for('predict') }}">
+
+
+      <div class="container">
+        <div class="jumbotron">
+
+
+          <div class="form-group">
+
+                {{ form.applicantincome.label(class="form-control-label") }}
+                {{ form.applicantincome(class="form-control form-control") }}
+
+          </div>
+
+          <div class="form-group">
+
+                {{ form.coapplicantincome.label(class="form-control-label") }}
+                {{ form.coapplicantincome(class="form-control form-control") }}
+
+          </div>
+
+          <div class="form-group">
+
+                {{ form.loanamount.label(class="form-control-label") }}
+                {{ form.loanamount(class="form-control form-control") }}
+
+          </div>
+
+          <div class="form-group">
+
+                {{ form.loan_amount_term.label(class="form-control-label") }}
+                {{ form.loan_amount_term(class="form-control form-control") }}
+
+          </div>
+
+
+          <div class="form-group">
+
+                {{ form.gender.label(class="form-control-label") }}
+                {{ form.gender(class="form-control form-control") }}
+
+          </div>
+
+
+          <div class="form-group">
+
+                {{ form.married.label(class="form-control-label") }}
+                {{ form.married(class="form-control form-control") }}
+
+          </div>
+
+          <div class="form-group">
+
+                {{ form.dependents.label(class="form-control-label") }}
+                {{ form.dependents(class="form-control form-control") }}
+
+          </div>
+
+          <div class="form-group">
+
+                {{ form.education.label(class="form-control-label") }}
+                {{ form.education(class="form-control form-control") }}
+
+          </div>
+
+          <div class="form-group">
+
+                {{ form.self_employed.label(class="form-control-label") }}
+                {{ form.self_employed(class="form-control form-control") }}
+
+          </div>
+
+
+
+          <div class="form-group">
+
+                {{ form.credit_history.label(class="form-control-label") }}
+                {{ form.credit_history(class="form-control form-control") }}
+
+          </div>
+
+          <div class="form-group">
+
+                {{ form.property_area.label(class="form-control-label") }}
+                {{ form.property_area(class="form-control form-control") }}
+
+          </div>
+
+            <div class="btn btn-primary btn-lg">
+              <input type="submit" name="" value="PREDICT">
+            </div>
+
+            <hr class="my-4">
+
+            <div class="alert alert-primary" role="alert">
+                {{ prediction_text }}
+            </div>
+
+
+
+        </div>
+      </div>
+
+
+
+
+
+    </form>
+
+
+
+</body>
+</html>
